@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Route, Routes, Navigate } from "react-router-dom"
 import Navbar from "./components/navbar"
 import Footer from "./components/footer"
+import Home from "./pages/Home"
 import UserList from "./components/userList"
 import Edit from "./components/edit"
 import Create from "./components/create"
@@ -18,7 +19,8 @@ const App = () => {
                 <Routes>
                     <Route path="/login" element={<Login onLogin={(token) => { localStorage.setItem('token', token); setToken(token); }} />} />
                     <Route path="/register" element={<Register />} />
-                    <Route exact path="/" element={token ? <UserList /> : <Navigate to="/login" replace />} />
+                    <Route exact path="/" element={<Home />} />
+                    <Route path="/users" element={token ? <UserList /> : <Navigate to="/login" replace />} />
                     <Route path="/edit/:id" element={token ? <Edit /> : <Navigate to="/login" replace />} />
                     <Route path="/create" element={token ? <Create /> : <Navigate to="/login" replace />} />
                     <Route path="*" element={<Navigate to="/" replace />} />

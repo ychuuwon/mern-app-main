@@ -1,38 +1,18 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/js/bootstrap.bundle";
+import "../styles/footer.css";
 
 export default function Footer() {
   return (
-    <footer className="bg-dark text-light py-4">
-      <div className="container text-center">
-        <p className="mb-1">MongoDB + Express + React + Node.js = MERN </p>
-        <p className="mb-1">Professor Matheus Lorenzato Braga</p>
-        <div className="d-flex justify-content-center gap-3">
-          <a
-            href="mailto:matheus.braga@ifc.edu.br"
-            className="text-light"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            E-mail
-          </a>
-          <a
-            href="https://www.instagram.com/mathlbraga"
-            className="text-light"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Instagram
-          </a>
-          <a
-            href="https://www.linkedin.com/in/mathlbraga"
-            className="text-light"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn
-          </a>
+    <footer className="footer" id="contato">
+      <div className="footer-container">
+        <div className="footer-text">
+          <h2 className="footer-title">CONTATO</h2>
+          <p>Entre em contato com os coordenadores do projeto em caso de dúvidas ou sugestões!</p>
+        </div>
+        <div className="footer-info">
+          <p><strong>Email:</strong> popphilo@ifc.edu.br</p>
+          <p><strong>Telefone:</strong> +55 (67) 67676767</p>
+          <p><strong>Instagram:</strong> @popphilo_ifc</p>
         </div>
       </div>
     </footer>

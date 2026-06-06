@@ -1,40 +1,39 @@
 import React from "react";
-
-// We import bootstrap to make our application look better.
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle"
-
-// We import NavLink to utilize the react router.
 import { NavLink } from "react-router-dom";
 import Logo from "././Logo.png";
+import "../styles/navbar.css";
 
-// Here, we display our Navbar
 export default function Navbar() {
-    return (
-        <div>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light p-2">
-                <NavLink className="navbar-brand" to="/">
-                    <img style={{ "width": "25%" }} src={Logo} alt="Logo do IFC"></img>
-                </NavLink>
-                <button
-                    className="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent"
-                >
-                    <span className="navbar-toggler-icon"></span>
-                </button>
+    const token = localStorage.getItem('token');
 
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav ms-auto">
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/create">
-                                Cadastrar Usuários
-                            </NavLink>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        window.location.href = '/';
+    };
+
+    return (
+        <nav className="navbar-custom">
+            <div className="navbar-container">
+                <NavLink className="navbar-logo" to="/">
+                    <img src={Logo} alt="Logo Cinelosofia" className="logo-img" />
+                </NavLink>
+                <ul className="nav-menu">
+                    <li><NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>HOME</NavLink></li>
+                    <li><NavLink to="/login" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>LOGIN</NavLink></li>
+                    <li><a href="#proximo-encontro" className="nav-link">PARTICIPE</a></li>
+                    <li><a href="#acervos" className="nav-link">ACERVOS</a></li>
+                    <li><a href="#chat" className="nav-link">CHAT</a></li>
+                    <li><a href="#contato" className="nav-link">CONTATO</a></li>
+                    {token && (
+                        <>
+                            <li><NavLink to="/users" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>USUÁRIOS</NavLink></li>
+                            <li><button onClick={handleLogout} className="nav-link logout-btn">SAIR</button></li>
+                        </>
+                    )}
+                </ul>
+            </div>
+        </nav>
     );
 }
