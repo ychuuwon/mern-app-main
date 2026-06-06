@@ -1,52 +1,106 @@
-# MERN App Básico
+# 🎬 CINELOSOFIA - Portal do Clube de Cinema e Filosofia
 
-![my picture](https://github.com/mathlbraga/mern-app-main/blob/main/mern-app.png)
+Portal web do **Clube de Cinema e Filosofia** do IFC - Campus Sombrio. Plataforma para gerenciar sessões de filmes, discussões filosóficas e acervos do clube.
 
-Uma aplicação full-stack [MERN](https://www.mongodb.com/mern-stack) para gerenciamento de informações de usuários.
+## 📋 Sobre o Projeto
 
-## Sobre o projeto
+CINELOSOFIA é um clube criado em 2024 que realiza encontros semanais com sessões de filmes seguidas de discussões filosóficas sobre as obras. Este projeto web oferece um espaço digital para que membros acessem informações sobre próximos encontros, acervos de filmes e um sistema de gerenciamento de usuários.
 
-Esta é uma aplicação MERN full-stack que gerencia informações básicas de usuários. O app utiliza um banco de dados de usuários hospedado no MongoDB Atlas e exibe os dados utilizando React.
+## 🎨 Seções do Site
 
-## Tecnologias Utilizadas
+- **Home** - Página inicial com apresentação do clube
+- **Quem Somos** - História e informações sobre CINELOSOFIA
+- **Próximo Encontro** - Detalhes do próximo filme a ser exibido
+- **Acervos** - Galeria de filmes e curtametragens do clube
+- **Contato** - Informações de contato
 
-**Client:** React, Bootstrap
+## 🛠️ Tecnologias Utilizadas
 
-**Server:** NodeJS, ExpressJS
+**Frontend:**
+- React
+- CSS3 (Custom Properties, Flexbox, Grid)
+- React Router
 
-**Banco de dados:** MongoDB
+**Backend:**
+- Node.js
+- Express.js
+- MongoDB
 
-## Rodando Localmente
+**Banco de Dados:**
+- MongoDB
 
-Clone o repositório
+## 📦 Como Rodar o Projeto
 
+### Pré-requisitos
+- Node.js instalado
+- MongoDB configurado
+
+### Instalação
+
+1. Acesse a pasta do cliente:
 ```bash
-  git clone https://github.com/mathlbraga/mern-app-main.git
+cd client
+npm install
 ```
 
-Acesse o diretório do projeto
-
+2. Acesse a pasta do servidor:
 ```bash
-  cd mern-app-main
+cd server
+npm install
 ```
 
-Instale as dependências do servidor
+3. Configure as variáveis de ambiente no arquivo `.env` do servidor:
+```
+PORT=5000
+MONGODB_URI=seu_uri_do_mongodb
+```
 
+### Executar
+
+**Frontend:**
 ```bash
-  cd server
-  npm install
+cd client
+npm start
 ```
-Instale as dependências do cliente
 
+**Backend:**
 ```bash
-  cd client
-  npm install
+cd server
+npm start
 ```
 
-Configure o parâmetro de conexão com o Atlas em `server/db/conn.js` com sua URI do Atlas:
+O site estará disponível em `http://localhost:3000`
+
+## 📧 Contato
+
+- **Email:** popphilo@ifc.edu.br
+- **Telefone:** +55 (48) 9999-xxxx
+- **Instagram:** @popphilo_ifc
+
+## 📅 Estrutura de Pastas
+
 ```
-  Db = "mongodb+srv://<username>:<password>@cluster0.xyz123.mongodb.net/?retryWrites=true&w=majority"
+tcc/
+├── client/               # Frontend React
+│   ├── public/          # Arquivos estáticos
+│   ├── src/
+│   │   ├── components/  # Componentes React
+│   │   ├── pages/       # Páginas
+│   │   ├── styles/      # Arquivos CSS
+│   │   ├── App.js
+│   │   └── index.js
+│   └── package.json
+├── server/              # Backend Node.js
+│   ├── routes/          # Rotas da API
+│   ├── db/              # Configuração do banco
+│   ├── server.js
+│   └── package.json
+└── README.md
 ```
+
+---
+
+Desenvolvido para o TCC de Cinema e Filosofia do IFC - Campus Sombrio
 
 Altere o nome do banco de dados em`server/db/conn.js` para o seu:
 
