@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Route, Routes, Navigate } from "react-router-dom"
+import { Route, Routes, Navigate, useLocation } from "react-router-dom"
 import Navbar from "./components/navbar"
 import Footer from "./components/footer"
 import Home from "./pages/Home"
@@ -11,6 +11,8 @@ import Register from "./components/Register"
 
 const App = () => {
     const [token, setToken] = useState(localStorage.getItem('token'));
+    const location = useLocation();
+    const isLoginPage = location.pathname === '/login';
 
     return (
         <div className="d-flex flex-column min-vh-100">
@@ -26,7 +28,7 @@ const App = () => {
                     <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
             </main>
-            <Footer />
+            {!isLoginPage && <Footer />}
         </div>
     )
 }

@@ -7,6 +7,7 @@ export default function Login({ onLogin }) {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [error, setError] = useState("")
+    const [showPassword, setShowPassword] = useState(false)
     const navigate = useNavigate()
 
     const goToRegister = () => {
@@ -49,8 +50,23 @@ export default function Login({ onLogin }) {
                 </div>
                 <div className="mb-3">
                     <label>Senha</label>
-                    <input type="password" className="form-control"
-                        value={password} onChange={(e) => setPassword(e.target.value)} required />
+                    <div style={{ position: 'relative' }}>
+                        <input type={showPassword ? "text" : "password"} className="form-control"
+                            value={password} onChange={(e) => setPassword(e.target.value)} required />
+                        <span 
+                            onClick={() => setShowPassword(!showPassword)}
+                            style={{
+                                position: 'absolute',
+                                right: '10px',
+                                top: '50%',
+                                transform: 'translateY(-50%)',
+                                cursor: 'pointer',
+                                fontSize: '20px'
+                            }}
+                        >
+                            {showPassword ? '👁️' : '👁️‍🗨️'}
+                        </span>
+                    </div>
                 </div>
                 <div className="mb-3">
                     <button className="btn btn-primary">Entrar</button>

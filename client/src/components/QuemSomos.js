@@ -12,7 +12,7 @@ const QuemSomos = () => {
         <div className="quem-somos-content">
           <h2 className="quem-somos-title">QUEM SOMOS?</h2>
           <p className="quem-somos-text">
-            O clube <strong>Cinelosofia</strong> surgiu no ano de 2024, idealizado pelas estudantes <strong>Júlio Pellin</strong> e <strong>Vitória Behends</strong>. 
+            O clube <strong>Cinelosofia</strong> surgiu no ano de 2024, idealizado pelas estudantes <strong>Júlia Pellin</strong> e <strong>Vitória Behenck</strong>. 
             Desde então, ocorre em encontros semanais que juntam sessões de filmes com discussões filosóficas sobre as obras vistas.
           </p>
         </div>
